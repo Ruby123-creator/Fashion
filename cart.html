@@ -129,15 +129,32 @@
         data.forEach((item) => {
             if(item.id)
             cart.innerHTML += `
-            <tr>
-                <td><i class="fa-solid fa-trash"></i></td>
+            <tr id="tableContentRows">
+                <td ><button id="removeBtn"><i class="fa-solid fa-trash"></i></button></td>
                 <td><img width=50px src="images/products/f${item.id}.jpg" alt=""></td>
                 <td>Cartoon Astronaut T-shirts</td>
-                <td>${item.price}</td>
-                <td><input type="number" name="" id="" value=${item.qty}></td>
-                <td>${item.price}</td>
+                <td id="productPrice">${item.price}</td>
+                <td><input class="cartInput" type="number" name="" id="" value=${item.qty}></td>
+                <td id="totalPrice">${item.qty*item.price}</td>
             </tr>`
         });
+        let removeBtn = document.querySelectorAll("#removeBtn")
+        let ContentRows = document.querySelectorAll("#tableContentRows")
+        let qtyInputs = document.querySelectorAll(".cartInput")
+        let priceList = document.querySelectorAll("#productPrice")
+        let totalPriceList = document.querySelectorAll("#totalPrice")
+        for(let i = 0;i<qtyInputs.length;i++){
+            qtyInputs[i].addEventListener("input",()=>{
+                totalPriceList[i].innerHTML = priceList[i].innerHTML*qtyInputs[i].value
+            })
+            removeBtn[i].addEventListener('click',()=>{
+                ContentRows[i].innerHTML = ""
+                
+            })
+        }
+        // document.querySelector("cartInput").addEventListener("input",()=>{
+        //     document.getElementById("totalPrice").innerHTML = 
+        // })
 
     </script>
 </body>

@@ -484,7 +484,11 @@ width: 20%;
   padding: 2px;
   transition: 0.2s all;
 }
-
+@media screen and (min-width:700px)  {
+  #navbar{
+    display: flex !important;
+  }
+}
 
 @media screen and (max-width:670px) {
    .icon{
@@ -498,9 +502,9 @@ width: 20%;
     position: absolute;
     right: 0px;;
     top:0;
-    transition: 3s all;
+    /* transition: 3s all; */
     display: none;
-    padding: 0 2rem;
+    padding: 50px 2rem;
     background-color: #fff;
     height: 80vh;
     align-items: center;

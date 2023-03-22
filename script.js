@@ -34,13 +34,7 @@ for (let i = 1; i <= 8; i++) {
 var x = document.getElementById("navbar");
 
 function navbar() {
-	console.log("hello")
-
 	x.style.display = "flex";
-
-
-
-
 }
 var p = document.getElementById("close");
 p.addEventListener("click", () => {
