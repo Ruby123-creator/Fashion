@@ -124,48 +124,19 @@
     <script>
 
         let data = JSON.parse(localStorage.getItem("cart"));
-
-        let cart = document.getElementById("cart-item")
-        // let i=1;
-        data.forEach((item) => {
-            if(item.id)
-            cart.innerHTML += `
-            <tr id="tableContentRows">
-                <td ><button class = "removeBtn" ><i id="${item.id}" class="fa-solid fa-trash"></i></button></td>
-                <td><img width=50px src="images/products/f${item.id}.jpg" alt=""></td>
-                <td>Cartoon Astronaut T-shirts</td>
-                <td id="productPrice">${item.price}</td>
-                <td><input class="cartInput" type="number" name="" id="" value=${item.qty}></td>
-                <td id="totalPrice">${item.qty*item.price}</td>
-            </tr>`
-        });
-        let removeBtn = document.querySelectorAll(".removeBtn")
-        let ContentRows = document.querySelectorAll("#tableContentRows")
-        let qtyInputs = document.querySelectorAll(".cartInput")
-        let priceList = document.querySelectorAll("#productPrice")
-        let totalPriceList = document.querySelectorAll("#totalPrice")
-        for(let i = 0;i<qtyInputs.length;i++){
-            qtyInputs[i].addEventListener("input",()=>{
-                totalPriceList[i].innerHTML = priceList[i].innerHTML*qtyInputs[i].value
-            })
-            removeBtn[i].addEventListener('click',deleteBtn)
-        }
-        function deleteBtn(e){
-            // ContentRows[i].innerHTML = "";
-            console.log(e.target.id)
-                for(let x of data){
-                    console.log(x.id);
-                    if(e.target.id==x.id){
-                        console.log("hii")
-                        delete x;
-                        // localStorage.removeItem(x);
-                    }
-                }
-        }
-        // document.querySelector("cartInput").addEventListener("input",()=>{
-        //     document.getElementById("totalPrice").innerHTML = 
-        // })
-
+         let cart = document.getElementById("cart-item")
+         data.forEach(item => {
+            cart.innerHTML +=`
+            <tr>
+                <td><i class="fa-solid fa-trash"></i></td>
+	   <td><img width=50 src="/images/products/f${item.id}.jpg" alt=""></td>
+	   <td>Cartoon Astronaut T-shirts</td>
+	   <td>${item.price}</td>
+	   <td><input type="number" name="" id="" value="1"></td>
+	   <td>${item.price}</td>
+       </tr>`
+         });
+            
     </script>
 </body>
 
