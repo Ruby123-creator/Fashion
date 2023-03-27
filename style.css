@@ -158,6 +158,11 @@ li a:hover::after{
   background-color: transparent;
   cursor: pointer;
 }
+#hero button a{
+  text-decoration: none;
+  color: #088178;
+  font-weight: 700;
+}
 #features{
   display: flex;
   justify-content: center;
@@ -171,6 +176,8 @@ li a:hover::after{
   border-radius: 4px;
   margin: 15px 10px;
   padding: 15px 10px;
+}
+#features .f1:hover{
   box-shadow:10px 10px 33px rgba(0,0,0,20%) ;
 }
 #features .f1 img{
@@ -416,7 +423,8 @@ li a:hover::after{
   padding: 10px;
   width: 100%;
   position: relative;
-  border-radius: 5px;
+  border: none;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -476,7 +484,11 @@ width: 20%;
   padding: 2px;
   transition: 0.2s all;
 }
-
+@media screen and (min-width:700px)  {
+  #navbar{
+    display: flex !important;
+  }
+}
 
 @media screen and (max-width:670px) {
    .icon{
@@ -490,9 +502,9 @@ width: 20%;
     position: absolute;
     right: 0px;;
     top:0;
-    transition: 3s all;
+    /* transition: 3s all; */
     display: none;
-    padding: 0 2rem;
+    padding: 50px 2rem;
     background-color: #fff;
     height: 80vh;
     align-items: center;
@@ -531,7 +543,7 @@ flex-direction: column;
   color: #c6ebe8;
 }
 #item{
-  background-image: url(/images/banner/b1.jpg);
+  background-image: url(images/banner/b1.jpg);
   background-size: cover;
 }
 .item-heading h3 {
@@ -689,7 +701,7 @@ flex-direction: column;
   padding: 14px;
 }
 #page-header.blog-header{
-  background-image: url(/images/banner/b19.jpg);
+  background-image: url(images/banner/b19.jpg);
   
 }
 
@@ -749,7 +761,7 @@ p{
 }
 
 #page-header.blog-page{
-  background-image: url("/images/about/banner.png");
+  background-image: url("images/about/banner.png");
 }
 
 #about-head{
@@ -782,4 +794,49 @@ p{
   width: 100%;
   height: 100%;
   border-radius: 20px;
+}
+
+input[type='search'] {
+  padding: 10px;
+  font-size: 1.1em;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#modal-overlay {
+  width: 100%;
+  height: 900%;
+  overflow: scroll;
+  /* height: max-content; */
+  
+  background: white;
+  
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-overlay #modal {
+  max-width: 650px;
+  width: 100%;
+  background: white;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#modal-overlay #modal .modal-footer {
+  margin-top: auto;
+}
+.searchedModal{
+  position: relative;
 }
