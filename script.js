@@ -91,7 +91,7 @@ fetch("https://fakestoreapi.com/products")
 				 <div class="content">
 					 <div class="price"> <i class="fa-solid fa-indian-rupee-sign"></i>
 					 ${element.price}</div>
-					 <div class="addtocart">${element.rating.count} items</div>
+					 <div class="addtoCart">${element.rating.count} items</div>
 				 </div>
 			
 				</div>
