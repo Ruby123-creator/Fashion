@@ -126,11 +126,11 @@
         let data = JSON.parse(localStorage.getItem("cart"));
 
         let cart = document.getElementById("cart-item")
-        data.forEach((item) => {
+        data.forEach((item,index) => {
             if(item.id)
             cart.innerHTML += `
-            <tr id="tableContentRows">
-                <td ><button id="removeBtn"><i class="fa-solid fa-trash"></i></button></td>
+            <tr class="tableContentRows">
+                <td ><button id="removeBtn"><i id="${index}"class="fa-solid fa-trash"></i></button></td>
                 <td><img width=50px src="images/products/f${item.id}.jpg" alt=""></td>
                 <td>Cartoon Astronaut T-shirts</td>
                 <td id="productPrice">${item.price}</td>
@@ -139,7 +139,7 @@
             </tr>`
         });
         let removeBtn = document.querySelectorAll("#removeBtn")
-        let ContentRows = document.querySelectorAll("#tableContentRows")
+        let ContentRows = document.querySelectorAll(".tableContentRows")
         let qtyInputs = document.querySelectorAll(".cartInput")
         let priceList = document.querySelectorAll("#productPrice")
         let totalPriceList = document.querySelectorAll("#totalPrice")
@@ -147,9 +147,13 @@
             qtyInputs[i].addEventListener("input",()=>{
                 totalPriceList[i].innerHTML = priceList[i].innerHTML*qtyInputs[i].value
             })
-            removeBtn[i].addEventListener('click',()=>{
+            removeBtn[i].addEventListener('click',(e)=>{
+                let dataArr = JSON.parse(localStorage.getItem("cart"));
+                let rowToBeDeleted = e.target.id
+                console.log(e.target.id);
+                dataArr.splice(rowToBeDeleted,1)
+                localStorage.setItem("cart",JSON.stringify(dataArr))
                 ContentRows[i].innerHTML = ""
-                
             })
         }
         // document.querySelector("cartInput").addEventListener("input",()=>{
