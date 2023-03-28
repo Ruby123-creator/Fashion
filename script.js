@@ -137,9 +137,7 @@ if (localStorage.getItem('cart') == null) {
 	brr = [...JSON.parse(localStorage.getItem('cart'))]
 }
 function AddToCart(e) {
-	e.target.disabled = true;
-    //  e.target.innerHTML ="";
-	// e.target.innerHTML = '<i class="fa-solid fa-check"></i>'
+	
 
 	// console.log(e);
 	// console.log("hello")
