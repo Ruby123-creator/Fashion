@@ -111,33 +111,7 @@ img.forEach((item) => {
 	})
 })
 
-let product_div = document.getElementById("product-category2")
 
-// for(let i=1;i<=4;i++){
-// 	let price = Math.floor(Math.random()*1000)+200
-// 	product_div.innerHTML +=`<div class="product">
-// 	<div class="product-image">
-// 	 <img class ="shirts" src="images/products/n${i}.jpg" alt="img">
-// 	</div>  
-// 	<div class="product-desc">
-// 	 <p class="brand" >adidas</p>
-// 	 <h6 class="title">Cartoon Astronaut T-shirts</h6>
-// 	 <div class="rating"> <i class="fa-solid fa-star"></i>
-// 	 <i class="fa-solid fa-star"></i>
-// 	 <i class="fa-solid fa-star"></i>
-// 	 <i class="fa-solid fa-star"></i>
-// 	 <i class="fa-solid fa-star"></i>
-// 	 </div>
-// 	 <div class="content">
-// 		 <div class="price"> <i class="fa-solid fa-indian-rupee-sign"></i>
-// 		 ${price}</div>
-// 		 <div class="addtocart"><button><i class="fa-solid fa-cart-shopping"></i>
-// 		 </button></div>
-// 	 </div>
-
-// 	</div>
-// </div>` 
-// }
 
 let shirt = document.querySelectorAll(".shirts");
 shirt.forEach((item) => {
@@ -147,32 +121,6 @@ shirt.forEach((item) => {
 })
 
 
-let search = document.getElementById("search-bar");
-let users = []
-
-// search.addEventListener("input", e => {
-//   const value = e.target.value.toLowerCase()
-//   users.forEach(user => {
-//     const isVisible =
-//       user.name.toLowerCase().includes(value) ||
-//       user.email.toLowerCase().includes(value)
-//     // user.element.classList.toggle("hide", !isVisible)
-//   })
-// })
-
-// fetch("https://fakestoreapi.com/products/")
-//   .then(res => res.json())
-//   .then(data => {
-//     users = data.map(item => {
-//       const card = userCardTemplate.content.cloneNode(true).children[0]
-//       const header = card.querySelector("[data-header]")
-//       const body = card.querySelector("[data-body]")
-//       header.textContent = item.name
-//       body.textContent = item.email
-//       userCardContainer.append(card)
-//       return { name: item.name, email: item.email, element: card }
-//     })
-//   })
 
 let cart_arr = document.querySelectorAll(".addtocart");
 console.log(cart_arr)
@@ -189,6 +137,10 @@ if (localStorage.getItem('cart') == null) {
 	brr = [...JSON.parse(localStorage.getItem('cart'))]
 }
 function AddToCart(e) {
+	e.target.disabled = true;
+    //  e.target.innerHTML ="";
+	// e.target.innerHTML = '<i class="fa-solid fa-check"></i>'
+
 	// console.log(e);
 	// console.log("hello")
 	let p = e.target.id;
