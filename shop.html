@@ -262,6 +262,89 @@
                 parent.removeChild(parent.firstChild);
             }
         }
+
+        let element = document.getElementById("carousal");
+console.log(element);
+let i = 1;
+let image = document.createElement("img")
+
+
+setInterval(() => {
+	if (i == 1) {
+		image.className = "fade-in-image";
+
+	} else if (i == 5) {
+
+
+		image.className = "fade-out-image";
+		image.className = "fade-in-image";
+		i = 1;
+	} else {
+
+		image.className = "fade-out-image";
+		image.className = "fade-in-image";
+	}
+	image.src = `images/background/f${i}.jpg`
+	image.style.width = "60vw"
+	image.style.height = "50vh"
+	// image.style.transition ="2s"
+
+	element.appendChild(image);
+
+
+	i++;
+}, 2000)
+
+
+let prod = document.getElementById("varities");
+fetch("https://fakestoreapi.com/products")
+	.then((response) => response.json())
+	.then((data) => {
+		console.log(data);
+		data.forEach(element => {
+			prod.innerHTML += `<div class="product">
+				<div class="product-image">
+				 <img src=${element.image} alt="img">
+				</div>  
+				<div class="product-desc">
+				 <p class="title">${element.title}</p>
+				<h6 class="desc">${element.description}</h6>
+				 <div class="rating">${element.rating.rate} <i class="fa-solid fa-star"></i>
+				 
+				 </div>
+				 <div class="content">
+					 <div class="price"> <i class="fa-solid fa-indian-rupee-sign"></i>
+					 ${element.price}</div>
+					 <div class="addtoCart">${element.rating.count} items</div>
+				 </div>
+			
+				</div>
+			</div>`
+
+		});
+	})
+
+
+
+
+    let container = document.getElementById("main-img");
+let img = document.querySelectorAll(".small-img")
+img.forEach((item) => {
+	item.addEventListener("click", () => {
+		let p = container.src;
+		container.src = item.src;
+		item.src = p;
+	})
+})
+
+
+
+let shirt = document.querySelectorAll(".shirts");
+shirt.forEach((item) => {
+	item.addEventListener("click", () => {
+		window.location.href = 'shop.html';
+	})
+})
     </script>
     <script src="script.js"></script>
 </body>

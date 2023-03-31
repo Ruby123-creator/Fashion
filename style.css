@@ -63,7 +63,8 @@ body {
   width: 100%;
   min-width: 400px
 }
-
+/* index.html */
+/* navbar-section */
 #header{
   display: flex;
   align-items: center;
@@ -88,6 +89,8 @@ body {
   display: flex;
   width: 50%;
 }
+
+/* shop-page navbar */
 .left-part .searching-bar{
   width: 30%;
 }
@@ -128,6 +131,13 @@ li a:hover::after{
   left: 20px;
   bottom: -4px;
 }
+
+
+
+
+
+
+/* hero-section */
 #hero{
   background-image: url("images/hero4.png");
   height: 90vh;
@@ -163,6 +173,8 @@ li a:hover::after{
   color: #088178;
   font-weight: 700;
 }
+
+/* features-section */
 #features{
   display: flex;
   justify-content: center;
@@ -207,7 +219,7 @@ li a:hover::after{
   background-color: #f6dbf6;
 }
 
-
+/* product-section */
 #products #product-category{
   display: flex;
   flex-wrap: wrap;
@@ -275,6 +287,10 @@ li a:hover::after{
 .product-heading p{
   color: #4e5150 ;
 }
+
+
+
+/* banner-section */
 #banner{
   display: flex;
   flex-direction: column;
@@ -390,6 +406,7 @@ li a:hover::after{
 }
 
 
+/* sign-up section */
 #sign-up{
   display: flex;
   justify-content: space-between;
@@ -444,6 +461,9 @@ width: 20%;
 .icon{
   display: none;
 }
+
+
+/* footer-section */
 #footer{
   display: flex;
   flex-direction: column;
@@ -484,6 +504,9 @@ width: 20%;
   padding: 2px;
   transition: 0.2s all;
 }
+
+
+/* media queries for tablet */
 @media screen and (min-width:700px)  {
   #navbar{
     display: flex !important;
@@ -535,6 +558,65 @@ flex-direction: column;
 }
 }
 
+
+
+
+
+
+
+
+
+/* shop-page */
+
+/* search-bar section */
+input[type='search'] {
+  padding: 10px;
+  font-size: 1.1em;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#modal-overlay {
+  width: 100%;
+  height: 900%;
+  overflow: scroll;
+  /* height: max-content; */
+  
+  background: white;
+  
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-overlay #modal {
+  max-width: 650px;
+  width: 100%;
+  background: white;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#modal-overlay #modal .modal-footer {
+  margin-top: auto;
+}
+.searchedModal{
+  position: relative;
+}
+
+
+
+/* carousal-section */
 #item{
   display: flex;
   /* margin: 50px; */
@@ -574,6 +656,8 @@ flex-direction: column;
   0% {opacity:1;}
   100% {opacity:0;}
 } 
+
+/* pagintation-section */
 #pagination{
   display: flex;
   justify-content: center;
@@ -589,6 +673,7 @@ flex-direction: column;
   border-radius: 2px;
 }
 
+/* variety-section */
 #varities{
   display: flex;
   flex-wrap: wrap;
@@ -616,11 +701,12 @@ flex-direction: column;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* #varities .desc:hover{
-  overflow: visible;
-  white-space: pre-wrap;
-} */
+
  
+
+
+
+/* predetails-section */
  #predetails{
   display: flex;
   align-items: center;
@@ -643,6 +729,7 @@ flex-direction: column;
 }
 
 
+/* product-section */
 .prod-desc{
 
   padding-top: 20px;
@@ -690,6 +777,15 @@ flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+
+
+
+
+
+
+
+/* blog-page */
 #page-header{
   height: 40vh;
   width: 100%;
@@ -700,6 +796,7 @@ flex-direction: column;
   align-items: center;
   padding: 14px;
 }
+
 #page-header.blog-header{
   background-image: url(images/banner/b19.jpg);
   
@@ -764,6 +861,12 @@ p{
   background-image: url("images/about/banner.png");
 }
 
+
+
+
+
+
+/* about-page */
 #about-head{
   display: flex;
   justify-content: center;
@@ -796,47 +899,30 @@ p{
   border-radius: 20px;
 }
 
-input[type='search'] {
-  padding: 10px;
-  font-size: 1.1em;
-  background: white;
-  color: black;
+
+
+/* cart-section */
+tr,td{
+  
+  text-align: center;
+  padding: 10px 8px;
+}
+table{
+
+  width: 70%;
+  margin:50px 150px;
+
+}
+
+table input{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+table #removeBtn{
+  color: rgb(240, 14, 14);
+  border-radius: 50%;
   border: none;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-#modal-overlay {
-  width: 100%;
-  height: 900%;
-  overflow: scroll;
-  /* height: max-content; */
-  
-  background: white;
-  
-  position: absolute;
-  top: 35px;
-  left: 0px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-#modal-overlay #modal {
-  max-width: 650px;
-  width: 100%;
-  background: white;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-#modal-overlay #modal .modal-footer {
-  margin-top: auto;
-}
-.searchedModal{
-  position: relative;
+  padding: 5px;
+  font-size: 15px;
 }

@@ -38,7 +38,7 @@ function navbar() {
 }
 var p = document.getElementById("close");
 p.addEventListener("click", () => {
-	// console.log("yess");
+	
 	x.style.display = "none";
 })
 let element = document.getElementById("carousal");
@@ -111,6 +111,8 @@ img.forEach((item) => {
 	})
 })
 
+let product_div = document.getElementById("product-category2")
+
 
 
 let shirt = document.querySelectorAll(".shirts");
@@ -121,9 +123,12 @@ shirt.forEach((item) => {
 })
 
 
+let search = document.getElementById("search-bar");
+let users = []
+
+
 
 let cart_arr = document.querySelectorAll(".addtocart");
-console.log(cart_arr)
 cart_arr.forEach((btn) => {
 	btn.addEventListener("click", AddToCart)
 })
@@ -135,18 +140,22 @@ if (localStorage.getItem('cart') == null) {
 	brr = []
 } else {
 	brr = [...JSON.parse(localStorage.getItem('cart'))]
-}
-function AddToCart(e) {
-	
 
-	// console.log(e);
-	// console.log("hello")
+}
+brr.forEach((item)=>{
+	let place = item.id
+	cart_arr[place-1].innerHTML = `<i class="fa-solid fa-check"></i>`
+	cart_arr[place-1].disabled = true
+})
+function AddToCart(e) {
 	let p = e.target.id;
-	//   console.log(e.target.id)
-	//    console.log(brr);
+	//   console.log(
+	cart_arr[p[p.length-1]-1].innerHTML = `<i class="fa-solid fa-check"></i>`
+	cart_arr[p[p.length-1]-1].disabled = true
 	let obj = {};
 	let isFind = false
 	brr.forEach(item => {
+
 		if (`addtocart${item.id}` == p) {
 			obj.qty = item.qty++
 			isFind = true
@@ -167,3 +176,5 @@ function AddToCart(e) {
 	}
 	localStorage.setItem("cart", JSON.stringify(brr))
 }
+{/* <i class="fa-solid fa-check fa-beat-fade" style="color: #11fa00;"></i> */}
+

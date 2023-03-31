@@ -10,7 +10,7 @@
 </head>
 
 <body>
-   <h1>hello</h1>
+
     <section id="header">
         <div class="left-part">
             <a href=""><img src="images/logo.png" alt=""></a>
@@ -129,8 +129,8 @@
         data.forEach((item) => {
             if(item.id)
             cart.innerHTML += `
-            <tr id="tableContentRows">
-                <td ><button id="removeBtn"><i class="fa-solid fa-trash"></i></button></td>
+            <tr class="tableContentRows">
+                <td ><button onClick = "deleteRow(${item.id})" id="removeBtn"><i class="fa-solid fa-trash"></i></button></td>
                 <td><img width=50px src="images/products/f${item.id}.jpg" alt=""></td>
                 <td>Cartoon Astronaut T-shirts</td>
                 <td id="productPrice">${item.price}</td>
@@ -139,7 +139,7 @@
             </tr>`
         });
         let removeBtn = document.querySelectorAll("#removeBtn")
-        let ContentRows = document.querySelectorAll("#tableContentRows")
+        
         let qtyInputs = document.querySelectorAll(".cartInput")
         let priceList = document.querySelectorAll("#productPrice")
         let totalPriceList = document.querySelectorAll("#totalPrice")
@@ -147,14 +147,22 @@
             qtyInputs[i].addEventListener("input",()=>{
                 totalPriceList[i].innerHTML = priceList[i].innerHTML*qtyInputs[i].value
             })
-            removeBtn[i].addEventListener('click',()=>{
-                ContentRows[i].innerHTML = ""
-                
-            })
+            
         }
-        // document.querySelector("cartInput").addEventListener("input",()=>{
-        //     document.getElementById("totalPrice").innerHTML = 
-        // })
+        function deleteRow(idToDelete){
+            let ContentRows = document.querySelectorAll(".tableContentRows")
+            console.log(ContentRows);
+            let dataArr = JSON.parse(localStorage.getItem("cart"));
+            
+            dataArr.forEach((item,index)=>{
+                if(item.id==idToDelete){
+                    dataArr.splice(index,1)
+                    ContentRows[index].remove()
+                }
+            })
+            localStorage.setItem("cart",JSON.stringify(dataArr))
+        }
+        
 
     </script>
 </body>
