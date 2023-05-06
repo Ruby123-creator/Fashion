@@ -68,6 +68,24 @@
             </fieldset>
         </form>
         <div class="owner-details">
+            <div class="owner">
+            
+                <div class="details">
+                    <div class="box">
+                        <div class="image">
+                            <img src="https://randomuser.me/api/portraits/med/women/10.jpg" alt="">
+                        </div>
+                        <div>
+                            <h5>Ruby Pal</h5>
+    
+                            <p>Senior Marketing Manager</p>
+                            <p>+91 9911412558</p>
+                            <p>rubyp20001@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                </div>
+               </div>
            <div class="owner">
             
             <div class="details">
@@ -91,18 +109,20 @@
             <div class="details">
                 <div class="box">
                     <div class="image">
-                        <img src="https://randomuser.me/api/portraits/med/men/20.jpg" alt="">
+                        <img src="https://randomuser.me/api/portraits/med/women/10.jpg" alt="">
                     </div>
                     <div>
-                        <h5>Ankit Dhiman</h5>
+                        <h5>Ruby Pal</h5>
+
                         <p>Senior Marketing Manager</p>
-                <p>+91 7018977794</p>
-                <p>ankitdhiman47704@gmail.com</p>
+                        <p>+91 9911412558</p>
+                        <p>rubyp20001@gmail.com</p>
                     </div>
                 </div>
                 
             </div>
            </div>
+           
         </div>
     </section>
     <section id="sign-up" class="section-p1 section-m1">
@@ -117,6 +137,7 @@
     </section>
     <section id="footer">
         <div class="part1">
+            <div class="aboutwebsite">
             <div class="contact">
                 <div class="image">
                     <img src="/images/logo.png" alt="">
@@ -153,6 +174,8 @@
                 <p>Track My Order</p>
                 <p>Help</p>
             </div>
+        </div>
+        <div class="install">
             <div class="app">
                 <h5>Install App</h5>
                 <p>From App Store</p>
@@ -163,15 +186,28 @@
                 </div>
                 <p>Secured Payment Gateways</p>
                 <div class="payments">
-                    <a href=""><button> <img src="images/pay/pay.png" alt=""></button></a>
+                    <a href=""><button> <img src="images/pay/pay.png" alt="">
+                        </button></a>
                 </div>
             </div>
+        </div>
         </div>
         <div class="part2">
             <p>© 2023. Tech2 etc-HTML CSS Ecommerce Template</p>
         </div>
     </section>
     <script src="https://kit.fontawesome.com/44c4ed4e83.js" crossorigin="anonymous"></script>
-    
+    <script>
+              var x = document.getElementById("navbar");
+
+function navbar() {
+	x.style.display = "flex";
+}
+var p = document.getElementById("close");
+p.addEventListener("click", () => {
+	
+	x.style.display = "none";
+})
+    </script>
 </body>
 </html>

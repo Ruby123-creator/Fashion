@@ -140,6 +140,7 @@
     </section>
     <section id="footer">
         <div class="part1">
+            <div class="aboutwebsite">
             <div class="contact">
                 <div class="image">
                     <img src="/images/logo.png" alt="">
@@ -176,6 +177,8 @@
                 <p>Track My Order</p>
                 <p>Help</p>
             </div>
+        </div>
+        <div class="install">
             <div class="app">
                 <h5>Install App</h5>
                 <p>From App Store</p>
@@ -191,12 +194,23 @@
                 </div>
             </div>
         </div>
+        </div>
         <div class="part2">
             <p>© 2023. Tech2 etc-HTML CSS Ecommerce Template</p>
         </div>
     </section>
     <script src="https://kit.fontawesome.com/44c4ed4e83.js" crossorigin="anonymous"></script>
     <script>
+        var x = document.getElementById("navbar");
+
+function navbar() {
+	x.style.display = "flex";
+}
+var p = document.getElementById("close");
+p.addEventListener("click", () => {
+	
+	x.style.display = "none";
+})
         const openModalButton = document.getElementById("open-modal");
         const modalWindowOverlay = document.getElementById("modal-overlay");
 
